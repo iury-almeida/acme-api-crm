@@ -1,8 +1,8 @@
 
 'use strict';
 
-const Client = require('pg').Client,
-    cliente = new Client({
+const Pool = require('pg').Pool,
+    pool = new Pool({
         user: process.env.DBUSER,
         host: process.env.DBHOST,
         database: process.env.DBDATABASE,
@@ -10,4 +10,4 @@ const Client = require('pg').Client,
         port: process.env.DBPORT || 5432
     });
 
-module.exports = cliente;
+module.exports = pool;
