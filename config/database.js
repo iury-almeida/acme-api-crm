@@ -7,7 +7,10 @@ const Pool = require('pg').Pool,
         host: process.env.DBHOST,
         database: process.env.DBDATABASE,
         password: process.env.DBPASSWORD,
-        port: process.env.DBPORT || 5432
+        port: process.env.DBPORT || 5432,
+        ssl: {
+            rejectUnauthorized:false
+        }
     });
 
 module.exports = pool;
